@@ -1,0 +1,1083 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>FZK XITER - GERADOR DE KEY</title><style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            #3b0000 0%,
+            #120000 30%,
+            #050505 70%,
+            #000000 100%
+        );
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* FUNDO */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            120deg,
+            transparent 40%,
+            rgba(255, 0, 0, 0.10) 50%,
+            transparent 60%
+        );
+
+    animation: brilhoFundo 7s linear infinite;
+}
+
+@keyframes brilhoFundo {
+
+    0% {
+        transform: translateX(-30%);
+    }
+
+    100% {
+        transform: translateX(30%);
+    }
+
+}
+
+/* PARTICULAS */
+
+.particle {
+    position: fixed;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: #ff0000;
+
+    box-shadow:
+        0 0 10px #ff0000,
+        0 0 20px rgba(255, 0, 0, 0.6);
+
+    animation: subir linear infinite;
+
+    pointer-events: none;
+}
+
+@keyframes subir {
+
+    from {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+
+}
+
+/* CONTAINER */
+
+.container {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    max-width: 520px;
+
+    min-height: 100vh;
+
+    margin: 0 auto;
+
+    padding:
+        35px 18px 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+/* LOGO */
+
+.logo {
+
+    width: 100%;
+
+    text-align: center;
+
+    margin-bottom: 8px;
+
+}
+
+.logo h1 {
+
+    font-size: 42px;
+
+    font-weight: 900;
+
+    letter-spacing: -2px;
+
+    text-shadow:
+        0 0 10px rgba(255, 0, 0, 0.5),
+        0 0 25px rgba(255, 0, 0, 0.25);
+
+}
+
+.logo h1 span {
+
+    color: #ff0000;
+
+}
+
+.logo p {
+
+    margin-top: 6px;
+
+    color: #aaa;
+
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+}
+
+/* ONLINE */
+
+.online {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    margin: 22px 0;
+
+}
+
+.online-dot {
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: #00ff55;
+
+    box-shadow:
+        0 0 10px #00ff55,
+        0 0 22px rgba(0, 255, 80, 0.5);
+
+    animation: onlinePulse 1.2s infinite;
+
+}
+
+@keyframes onlinePulse {
+
+    50% {
+        opacity: .35;
+        transform: scale(.75);
+    }
+
+}
+
+.online span {
+
+    color: #00ff55;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+}
+
+/* CARD */
+
+.card {
+
+    width: 100%;
+
+    position: relative;
+
+    padding:
+        40px 25px 32px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30, 3, 3, 0.97),
+            rgba(5, 5, 5, 0.98)
+        );
+
+    border: 2px solid #ff0000;
+
+    box-shadow:
+        0 0 15px rgba(255, 0, 0, 0.65),
+        0 0 45px rgba(255, 0, 0, 0.22),
+        inset 0 0 35px rgba(255, 0, 0, 0.07);
+
+}
+
+/* TITULO */
+
+.title {
+
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 34px;
+
+    font-weight: 900;
+
+    margin-bottom: 25px;
+
+}
+
+/* BOTAO GERAR */
+
+.generate {
+
+    width: 100%;
+
+    height: 65px;
+
+    border: 2px solid #ff3333;
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #b80000,
+            #ff0000,
+            #b80000
+        );
+
+    color: #fff;
+
+    font-size: 17px;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px rgba(255, 0, 0, 0.8),
+        inset 0 0 20px rgba(255, 255, 255, 0.08);
+
+    transition: .2s;
+
+}
+
+.generate:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 25px rgba(255, 0, 0, 1),
+        0 0 45px rgba(255, 0, 0, .35);
+
+}
+
+.generate:active {
+
+    transform: scale(.97);
+
+}
+
+/* SOCIAIS */
+
+#socials {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
+.social-title {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #aaa;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    margin: 28px 0 15px;
+
+    text-align: center;
+
+}
+
+.social-title::before,
+.social-title::after {
+
+    content: "";
+
+    height: 1px;
+
+    flex: 1;
+
+    background: #ff0000;
+
+    box-shadow:
+        0 0 8px #ff0000;
+
+}
+
+/* BOTOES SOCIAIS */
+
+.social {
+
+    width: 100%;
+
+    min-height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 12px 16px;
+
+    margin-bottom: 13px;
+
+    border-radius: 15px;
+
+    text-decoration: none;
+
+    color: #fff;
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    text-align: center;
+
+    transition: .2s;
+
+}
+
+.social svg {
+
+    width: 27px;
+
+    height: 27px;
+
+    fill: #fff;
+
+    flex-shrink: 0;
+
+    margin-right: 12px;
+
+}
+
+.social:hover {
+
+    transform: translateY(-2px);
+
+}
+
+.social:active {
+
+    transform: scale(.97);
+
+}
+
+/* YOUTUBE */
+
+.youtube {
+
+    background:
+        linear-gradient(
+            90deg,
+            #b50000,
+            #ff0000
+        );
+
+    border: 2px solid #ff3333;
+
+    box-shadow:
+        0 0 18px rgba(255, 0, 0, .35);
+
+}
+
+/* DISCORD - MESMA COR DO YOUTUBE */
+
+.discord {
+
+    background:
+        linear-gradient(
+            90deg,
+            #b50000,
+            #ff0000
+        );
+
+    border: 2px solid #ff3333;
+
+    box-shadow:
+        0 0 18px rgba(255, 0, 0, .35);
+
+}
+
+/* RESULTADO */
+
+#result {
+
+    width: 100%;
+
+    display: none;
+
+    text-align: center;
+
+    animation: aparecer .4s ease;
+
+}
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+/* CHECK */
+
+.success-icon {
+
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border: 2px solid #00ff55;
+
+    color: #00ff55;
+
+    font-size: 32px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 0 20px rgba(0, 255, 80, .5);
+
+}
+
+.success h2 {
+
+    font-size: 20px;
+
+    margin-bottom: 8px;
+
+}
+
+.success p {
+
+    color: #aaa;
+
+    font-size: 13px;
+
+    margin-bottom: 25px;
+
+}
+
+/* KEY */
+
+.key-area {
+
+    width: 100%;
+
+    padding: 23px 15px;
+
+    border-radius: 18px;
+
+    background: rgba(20, 0, 0, .75);
+
+    border: 2px solid #a90000;
+
+    box-shadow:
+        inset 0 0 25px rgba(255, 0, 0, .08),
+        0 0 15px rgba(255, 0, 0, .15);
+
+    margin-bottom: 17px;
+
+}
+
+.key-label {
+
+    display: block;
+
+    color: #aaa;
+
+    font-size: 12px;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 12px;
+
+}
+
+#generatedKey {
+
+    color: #fff;
+
+    font-size: 17px;
+
+    font-weight: 900;
+
+    word-break: break-word;
+
+    text-shadow:
+        0 0 10px rgba(255, 0, 0, .5);
+
+}
+
+/* COPIAR */
+
+.copy {
+
+    width: 100%;
+
+    height: 58px;
+
+    border: 2px solid #ff3333;
+
+    border-radius: 15px;
+
+    background: #ff0000;
+
+    color: #fff;
+
+    font-size: 15px;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 18px rgba(255, 0, 0, .5);
+
+    transition: .2s;
+
+}
+
+.copy:hover {
+
+    background: #d90000;
+
+}
+
+.copy:active {
+
+    transform: scale(.97);
+
+}
+
+/* FOOTER */
+
+footer {
+
+    width: 100%;
+
+    text-align: center;
+
+    margin-top: 25px;
+
+    padding-bottom: 10px;
+
+}
+
+footer p {
+
+    color: #777;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+}
+
+footer strong {
+
+    color: #fff;
+
+}
+
+/* TOAST */
+
+.toast {
+
+    position: fixed;
+
+    left: 50%;
+
+    bottom: 25px;
+
+    transform:
+        translate(-50%, 100px);
+
+    padding:
+        13px 20px;
+
+    background: #100000;
+
+    border: 1px solid #ff0000;
+
+    border-radius: 10px;
+
+    color: #fff;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    opacity: 0;
+
+    z-index: 100;
+
+    transition: .3s;
+
+    box-shadow:
+        0 0 20px rgba(255, 0, 0, .4);
+
+    white-space: nowrap;
+
+}
+
+.toast.show {
+
+    transform:
+        translate(-50%, 0);
+
+    opacity: 1;
+
+}
+
+</style></head><body><!-- PARTICULAS --><div class="particle"
+     style="left:5%;animation-duration:8s;"></div><div class="particle"
+     style="left:15%;animation-duration:11s;animation-delay:2s;"></div><div class="particle"
+     style="left:27%;animation-duration:9s;animation-delay:1s;"></div><div class="particle"
+     style="left:39%;animation-duration:13s;animation-delay:3s;"></div><div class="particle"
+     style="left:51%;animation-duration:10s;animation-delay:2s;"></div><div class="particle"
+     style="left:63%;animation-duration:12s;animation-delay:4s;"></div><div class="particle"
+     style="left:75%;animation-duration:9s;animation-delay:1s;"></div><div class="particle"
+     style="left:87%;animation-duration:14s;animation-delay:3s;"></div><div class="particle"
+     style="left:96%;animation-duration:10s;"></div><div class="container"><!-- LOGO -->
+
+<div class="logo">
+
+    <h1>
+        FZK <span>XITER</span>
+    </h1>
+
+    <p>
+        GERADOR DE KEY
+    </p>
+
+</div>
+
+
+<!-- ONLINE -->
+
+<div class="online">
+
+    <div class="online-dot"></div>
+
+    <span>
+        ONLINE
+    </span>
+
+</div>
+
+
+<!-- CARD -->
+
+<div class="card">
+
+
+    <!-- TELA DE GERAR -->
+
+    <div id="generator">
+
+        <div class="title">
+            Gere sua Key
+        </div>
+
+
+        <button
+            type="button"
+            id="generateButton"
+            class="generate"
+        >
+
+            🔑 GERAR UMA KEY
+
+        </button>
+
+
+        <!-- REDES -->
+
+        <div id="socials">
+
+            <div class="social-title">
+                ENTRE NAS NOSSAS REDES
+            </div>
+
+
+            <!-- YOUTUBE -->
+
+            <a
+                id="youtubeButton"
+                class="social youtube"
+                href="https://www.youtube.com/@FZKXITER"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                >
+
+                    <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8ZM9.6 15.9V8.1l6.5 3.9-6.5 3.9Z"/>
+
+                </svg>
+
+                CANAL DO YOUTUBE
+
+            </a>
+
+
+            <!-- DISCORD -->
+
+            <a
+                id="discordButton"
+                class="social discord"
+                href="https://discord.gg/5gZbbDJ4H"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                >
+
+                    <path d="M19.5 5.2A16.3 16.3 0 0 0 15.5 4l-.5 1a14.7 14.7 0 0 0-6 0l-.5-1a16.3 16.3 0 0 0-4 1.2C1.9 8.2 1.2 11.2 1.5 14.1a16.2 16.2 0 0 0 5 2.5l1.1-1.5a10.3 10.3 0 0 1-1.7-.8l.4-.3c3.3 1.5 6.9 1.5 10.2 0l.4.3c-.5.3-1.1.6-1.7.8l1.1 1.5a16.2 16.2 0 0 0 5-2.5c.3-3-.4-6-1.8-8.9ZM8.7 13.2c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm6.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"/>
+
+                </svg>
+
+                SERVIDOR DO DISCORD
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- TELA DA KEY -->
+
+    <div id="result">
+
+        <div class="success">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h2>
+                KEY GERADA
+            </h2>
+
+            <p>
+                Sua key foi gerada
+            </p>
+
+        </div>
+
+
+        <div class="key-area">
+
+            <span class="key-label">
+                SUA KEY FOI GERADA:
+            </span>
+
+            <div id="generatedKey">
+                PROXY-FZKXITER-5022
+            </div>
+
+        </div>
+
+
+        <button
+            type="button"
+            id="copyButton"
+            class="copy"
+        >
+            COPIAR KEY
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- RODAPE -->
+
+<footer>
+
+    <p>
+        CRIADO POR
+        <strong>FZK XITER</strong>
+    </p>
+
+</footer>
+
+</div><!-- TOAST --><div id="toast" class="toast">
+    KEY COPIADA COM SUCESSO!
+</div><script>
+
+/* =========================
+   KEY
+========================= */
+
+const KEY =
+    "PROXY-FZKXITER-FREE";
+
+
+/* =========================
+   ELEMENTOS
+========================= */
+
+const generateButton =
+    document.getElementById("generateButton");
+
+const copyButton =
+    document.getElementById("copyButton");
+
+const generator =
+    document.getElementById("generator");
+
+const result =
+    document.getElementById("result");
+
+const socials =
+    document.getElementById("socials");
+
+const generatedKey =
+    document.getElementById("generatedKey");
+
+const toast =
+    document.getElementById("toast");
+
+
+/* =========================
+   GERAR KEY
+========================= */
+
+generateButton.addEventListener(
+    "click",
+    function () {
+
+        generatedKey.textContent = KEY;
+
+        generator.style.display = "none";
+
+        result.style.display = "block";
+
+        socials.style.display = "none";
+
+        showToast(
+            "KEY GERADA COM SUCESSO!"
+        );
+
+    }
+);
+
+
+/* =========================
+   COPIAR KEY
+========================= */
+
+copyButton.addEventListener(
+    "click",
+    function () {
+
+        const key =
+            generatedKey.textContent;
+
+        if (
+            navigator.clipboard &&
+            window.isSecureContext
+        ) {
+
+            navigator.clipboard
+                .writeText(key)
+                .then(function () {
+
+                    showToast(
+                        "KEY COPIADA COM SUCESSO!"
+                    );
+
+                })
+                .catch(function () {
+
+                    fallbackCopy(key);
+
+                });
+
+        } else {
+
+            fallbackCopy(key);
+
+        }
+
+    }
+);
+
+
+/* =========================
+   FALLBACK COPIAR
+========================= */
+
+function fallbackCopy(text) {
+
+    const textarea =
+        document.createElement("textarea");
+
+    textarea.value = text;
+
+    textarea.style.position =
+        "fixed";
+
+    textarea.style.left =
+        "-9999px";
+
+    document.body.appendChild(
+        textarea
+    );
+
+    textarea.focus();
+
+    textarea.select();
+
+    try {
+
+        document.execCommand("copy");
+
+        showToast(
+            "KEY COPIADA COM SUCESSO!"
+        );
+
+    } catch (error) {
+
+        showToast(
+            "NÃO FOI POSSÍVEL COPIAR!"
+        );
+
+    }
+
+    document.body.removeChild(
+        textarea
+    );
+
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+function showToast(message) {
+
+    toast.textContent =
+        message;
+
+    toast.classList.add("show");
+
+    setTimeout(
+        function () {
+
+            toast.classList.remove(
+                "show"
+            );
+
+        },
+        2200
+    );
+
+}
+
+</script></body>
+</html>
