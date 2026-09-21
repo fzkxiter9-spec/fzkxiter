@@ -1,8 +1,11 @@
-<!DOCTYPE html><html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FZK XITER - GERADOR DE KEY</title><style>
+<title>FZK XITER - GERADOR DE KEY</title>
+
+<style>
 * {
     margin: 0;
     padding: 0;
@@ -472,7 +475,14 @@ footer strong {
     transform: translate(-50%, 0);
     opacity: 1;
 }
-</style></head><body><!-- PARTICULAS --><div class="particle" style="left:5%;animation-duration:8s;"></div>
+</style>
+</head>
+
+<body>
+
+<!-- PARTICULAS -->
+
+<div class="particle" style="left:5%;animation-duration:8s;"></div>
 <div class="particle" style="left:15%;animation-duration:11s;animation-delay:2s;"></div>
 <div class="particle" style="left:27%;animation-duration:9s;animation-delay:1s;"></div>
 <div class="particle" style="left:39%;animation-duration:13s;animation-delay:3s;"></div>
@@ -480,22 +490,30 @@ footer strong {
 <div class="particle" style="left:63%;animation-duration:12s;animation-delay:4s;"></div>
 <div class="particle" style="left:75%;animation-duration:9s;animation-delay:1s;"></div>
 <div class="particle" style="left:87%;animation-duration:14s;animation-delay:3s;"></div>
-<div class="particle" style="left:96%;animation-duration:10s;"></div><div class="container"><!-- LOGO -->
+<div class="particle" style="left:96%;animation-duration:10s;"></div>
+
+<div class="container">
+
+<!-- LOGO -->
+
 <div class="logo">
     <h1>FZK <span>XITER</span></h1>
     <p>GERADOR DE KEY</p>
 </div>
 
 <!-- ONLINE -->
+
 <div class="online">
     <div class="online-dot"></div>
     <span>ONLINE</span>
 </div>
 
 <!-- CARD -->
+
 <div class="card">
 
     <!-- TELA DE GERAR -->
+
     <div id="generator">
 
         <div class="title">
@@ -507,6 +525,7 @@ footer strong {
         </button>
 
         <!-- DISCORD -->
+
         <div id="socials">
 
             <div class="social-title">
@@ -521,7 +540,7 @@ footer strong {
                 rel="noopener noreferrer"
             >
                 <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M19.5 5.2A16.3 16.3 0 0 0 15.5 4l-.5 1a14.7 14.7 0 0 0-6 0l-.5-1a16.3 16.3 0 0 0-4 1.2C1.9 8.2 1.2 11.2 1.5 14.1a16.2 16.2 0 0 0 5 2.5l1.1-1.5a10.3 10.3 0 0 1-1.7-.8l.4-.3c3.3 1.5 6.9 1.5 10.2 0l.4.3c-.5.3-1.1.6-1.7.8l1.1 1.5a16.2 16.2 0 0 0 5-2.5c.3-3-.4-6-1.8-8.9ZM8.7 13.2c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm6.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8 0 1.8 2-.8 2-1.8 2Z"/>
+                    <path d="M19.5 5.2A16.3 16.3 0 0 0 15.5 4l-.5 1a14.7 14.7 0 0 0-6 0l-.5-1a16.3 16.3 0 0 0-4 1.2C1.9 8.2 1.2 11.2 1.5 14.1a16.2 16.2 0 0 0 5 2.5l1.1-1.5a10.3 10.3 0 0 1-1.7-.8l.4-.3c3.3 1.5 6.9 1.5 10.2 0l.4.3c-.5.3-1.1.6-1.7.8l1.1 1.5a16.2 16.2 0 0 0 5-2.5c.3-3-.4-6-1.8-8.9ZM8.7 13.2c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm6.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"/>
                 </svg>
                 SERVIDOR DO DISCORD
             </a>
@@ -530,24 +549,29 @@ footer strong {
     </div>
 
     <!-- TELA DA KEY -->
+
     <div id="result">
 
         <div class="success">
+
             <div class="success-icon">✓</div>
 
             <h2>KEY GERADA</h2>
 
             <p>SUA KEY FOI GERADA</p>
+
         </div>
 
         <div class="key-area">
+
             <span class="key-label">
                 SUA KEY FOI GERADA:
             </span>
 
             <div id="generatedKey">
-                FZK-XITER-1K
+                FZKXITER07
             </div>
+
         </div>
 
         <button type="button" id="copyButton" class="copy">
@@ -559,6 +583,7 @@ footer strong {
 </div>
 
 <!-- RODAPE -->
+
 <footer>
     <p>
         CRIADO POR
@@ -566,13 +591,22 @@ footer strong {
     </p>
 </footer>
 
-</div><!-- TOAST --><div id="toast" class="toast">
+</div>
+
+<!-- TOAST -->
+
+<div id="toast" class="toast">
     KEY COPIADA COM SUCESSO!
-</div><script>
+</div>
+
+<script>
+
 /* KEY */
-const KEY = "FZK-XITER-1K";
+
+const KEY = "FZKXITER07";
 
 /* ELEMENTOS */
+
 const generateButton = document.getElementById("generateButton");
 const copyButton = document.getElementById("copyButton");
 const generator = document.getElementById("generator");
@@ -582,61 +616,102 @@ const generatedKey = document.getElementById("generatedKey");
 const toast = document.getElementById("toast");
 
 /* GERAR KEY */
+
 generateButton.addEventListener("click", function () {
+
     generatedKey.textContent = KEY;
+
     generator.style.display = "none";
+
     result.style.display = "block";
+
     socials.style.display = "none";
 
     showToast("KEY GERADA COM SUCESSO!");
+
 });
 
 /* COPIAR KEY */
+
 copyButton.addEventListener("click", function () {
+
     const key = generatedKey.textContent;
 
     if (navigator.clipboard && window.isSecureContext) {
+
         navigator.clipboard.writeText(key)
+
             .then(function () {
+
                 showToast("KEY COPIADA COM SUCESSO!");
+
             })
+
             .catch(function () {
+
                 fallbackCopy(key);
+
             });
+
     } else {
+
         fallbackCopy(key);
+
     }
+
 });
 
 /* FALLBACK COPIAR */
+
 function fallbackCopy(text) {
+
     const textarea = document.createElement("textarea");
+
     textarea.value = text;
+
     textarea.style.position = "fixed";
+
     textarea.style.left = "-9999px";
 
     document.body.appendChild(textarea);
+
     textarea.focus();
+
     textarea.select();
 
     try {
+
         document.execCommand("copy");
+
         showToast("KEY COPIADA COM SUCESSO!");
+
     } catch (error) {
+
         showToast("NÃO FOI POSSÍVEL COPIAR!");
+
     }
 
     document.body.removeChild(textarea);
+
 }
 
 /* TOAST */
+
 function showToast(message) {
+
     toast.textContent = message;
+
     toast.classList.add("show");
 
     setTimeout(function () {
+
         toast.classList.remove("show");
+
     }, 2200);
+
 }
-</script></body>
+
+</script>
+
+</body>
 </html>
