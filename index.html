@@ -26,8 +26,6 @@ body {
     overflow-x: hidden;
 }
 
-/* FUNDO ANIMADO */
-
 body::before {
     content: "";
     position: fixed;
@@ -60,8 +58,6 @@ body::after {
     from { opacity: .5; transform: scale(1); }
     to { opacity: 1; transform: scale(1.08); }
 }
-
-/* PARTICULAS */
 
 .particle {
     position: fixed;
@@ -109,8 +105,6 @@ body::after {
     }
 }
 
-/* CONTAINER */
-
 .container {
     position: relative;
     z-index: 2;
@@ -123,8 +117,6 @@ body::after {
     flex-direction: column;
     align-items: center;
 }
-
-/* LOGO */
 
 .logo {
     width: 100%;
@@ -151,8 +143,6 @@ body::after {
     font-size: 13px;
     letter-spacing: 5px;
 }
-
-/* ONLINE */
 
 .online {
     display: flex;
@@ -186,8 +176,6 @@ body::after {
     font-weight: 800;
 }
 
-/* CARD */
-
 .card {
     width: 100%;
     position: relative;
@@ -203,8 +191,6 @@ body::after {
     backdrop-filter: blur(8px);
 }
 
-/* TITULO */
-
 .title {
     width: 100%;
     text-align: center;
@@ -213,8 +199,6 @@ body::after {
     margin-bottom: 25px;
     text-shadow: 0 0 15px rgba(0, 140, 255, .6);
 }
-
-/* BOTAO GERAR */
 
 .generate {
     width: 100%;
@@ -251,8 +235,6 @@ body::after {
     transform: scale(.97);
 }
 
-/* SOCIAIS */
-
 #socials {
     width: 100%;
     display: flex;
@@ -280,8 +262,6 @@ body::after {
     background: #008cff;
     box-shadow: 0 0 8px #008cff;
 }
-
-/* DISCORD */
 
 .social {
     width: 100%;
@@ -325,8 +305,6 @@ body::after {
         0 0 18px rgba(0, 130, 255, .45);
 }
 
-/* RESULTADO */
-
 #result {
     width: 100%;
     display: none;
@@ -344,8 +322,6 @@ body::after {
         transform: translateY(0);
     }
 }
-
-/* CHECK */
 
 .success-icon {
     width: 65px;
@@ -373,8 +349,6 @@ body::after {
     font-size: 13px;
     margin-bottom: 25px;
 }
-
-/* KEY */
 
 .key-area {
     width: 100%;
@@ -405,8 +379,6 @@ body::after {
         0 0 10px rgba(0, 140, 255, .7);
 }
 
-/* COPIAR */
-
 .copy {
     width: 100%;
     height: 58px;
@@ -431,8 +403,6 @@ body::after {
     transform: scale(.97);
 }
 
-/* FOOTER */
-
 footer {
     width: 100%;
     text-align: center;
@@ -449,8 +419,6 @@ footer p {
 footer strong {
     color: #fff;
 }
-
-/* TOAST */
 
 .toast {
     position: fixed;
@@ -480,8 +448,6 @@ footer strong {
 
 <body>
 
-<!-- PARTICULAS -->
-
 <div class="particle" style="left:5%;animation-duration:8s;"></div>
 <div class="particle" style="left:15%;animation-duration:11s;animation-delay:2s;"></div>
 <div class="particle" style="left:27%;animation-duration:9s;animation-delay:1s;"></div>
@@ -494,106 +460,90 @@ footer strong {
 
 <div class="container">
 
-<!-- LOGO -->
-
-<div class="logo">
-    <h1>FZK <span>XITER</span></h1>
-    <p>GERADOR DE KEY</p>
-</div>
-
-<!-- ONLINE -->
-
-<div class="online">
-    <div class="online-dot"></div>
-    <span>ONLINE</span>
-</div>
-
-<!-- CARD -->
-
-<div class="card">
-
-    <!-- TELA DE GERAR -->
-
-    <div id="generator">
-
-        <div class="title">
-            GERE SUA KEY
-        </div>
-
-        <button type="button" id="generateButton" class="generate">
-            🔑 GERAR UMA KEY
-        </button>
-
-        <!-- DISCORD -->
-
-        <div id="socials">
-
-            <div class="social-title">
-                ENTRE NAS NOSSAS REDES
-            </div>
-
-            <a
-                id="discordButton"
-                class="social discord"
-                href="https://discord.gg/5gZbbDJ4H"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M19.5 5.2A16.3 16.3 0 0 0 15.5 4l-.5 1a14.7 14.7 0 0 0-6 0l-.5-1a16.3 16.3 0 0 0-4 1.2C1.9 8.2 1.2 11.2 1.5 14.1a16.2 16.2 0 0 0 5 2.5l1.1-1.5a10.3 10.3 0 0 1-1.7-.8l.4-.3c3.3 1.5 6.9 1.5 10.2 0l.4.3c-.5.3-1.1.6-1.7.8l1.1 1.5a16.2 16.2 0 0 0 5-2.5c.3-3-.4-6-1.8-8.9ZM8.7 13.2c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm6.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"/>
-                </svg>
-                SERVIDOR DO DISCORD
-            </a>
-
-        </div>
+    <div class="logo">
+        <h1>FZK <span>XITER</span></h1>
+        <p>GERADOR DE KEY</p>
     </div>
 
-    <!-- TELA DA KEY -->
+    <div class="online">
+        <div class="online-dot"></div>
+        <span>ONLINE</span>
+    </div>
 
-    <div id="result">
+    <div class="card">
 
-        <div class="success">
+        <div id="generator">
 
-            <div class="success-icon">✓</div>
-
-            <h2>KEY GERADA</h2>
-
-            <p>SUA KEY FOI GERADA</p>
-
-        </div>
-
-        <div class="key-area">
-
-            <span class="key-label">
-                SUA KEY FOI GERADA:
-            </span>
-
-            <div id="generatedKey">
-                FZKXITER07
+            <div class="title">
+                GERE SUA KEY
             </div>
 
+            <button type="button" id="generateButton" class="generate">
+                🔑 GERAR UMA KEY
+            </button>
+
+            <div id="socials">
+
+                <div class="social-title">
+                    ENTRE NAS NOSSAS REDES
+                </div>
+
+                <a
+                    id="discordButton"
+                    class="social discord"
+                    href="https://discord.gg/5gZbbDJ4H"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M19.5 5.2A16.3 16.3 0 0 0 15.5 4l-.5 1a14.7 14.7 0 0 0-6 0l-.5-1a16.3 16.3 0 0 0-4 1.2C1.9 8.2 1.2 11.2 1.5 14.1a16.2 16.2 0 0 0 5 2.5l1.1-1.5a10.3 10.3 0 0 1-1.7-.8l.4-.3c3.3 1.5 6.9 1.5 10.2 0l.4.3c-.5.3-1.1.6-1.7.8l1.1 1.5a16.2 16.2 0 0 0 5-2.5c.3-3-.4-6-1.8-8.9ZM8.7 13.2c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm6.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"/>
+                    </svg>
+                    SERVIDOR DO DISCORD
+                </a>
+
+            </div>
         </div>
 
-        <button type="button" id="copyButton" class="copy">
-            COPIAR KEY
-        </button>
+        <div id="result">
+
+            <div class="success">
+
+                <div class="success-icon">✓</div>
+
+                <h2>KEY GERADA</h2>
+
+                <p>SUA KEY FOI GERADA</p>
+
+            </div>
+
+            <div class="key-area">
+
+                <span class="key-label">
+                    SUA KEY FOI GERADA:
+                </span>
+
+                <div id="generatedKey">
+                    FZKXITER01
+                </div>
+
+            </div>
+
+            <button type="button" id="copyButton" class="copy">
+                COPIAR KEY
+            </button>
+
+        </div>
 
     </div>
 
-</div>
-
-<!-- RODAPE -->
-
-<footer>
-    <p>
-        CRIADO POR
-        <strong>FZK XITER</strong>
-    </p>
-</footer>
+    <footer>
+        <p>
+            CRIADO POR
+            <strong>FZK XITER</strong>
+        </p>
+    </footer>
 
 </div>
-
-<!-- TOAST -->
 
 <div id="toast" class="toast">
     KEY COPIADA COM SUCESSO!
@@ -603,7 +553,7 @@ footer strong {
 
 /* KEY */
 
-const KEY = "FZKXITER07";
+const KEY = "FZKXITER01";
 
 /* ELEMENTOS */
 
