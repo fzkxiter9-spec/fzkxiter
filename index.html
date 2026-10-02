@@ -21,10 +21,12 @@ html, body {
 body {
     min-height: 100vh;
     background:
-        radial-gradient(circle at 50% 0%, #5c0000 0%, #210000 30%, #080000 65%, #000 100%);
+        radial-gradient(circle at 50% 0%, #600000 0%, #260000 30%, #090000 65%, #000000 100%);
     color: #fff;
     overflow-x: hidden;
 }
+
+/* FUNDO */
 
 body::before {
     content: "";
@@ -32,7 +34,12 @@ body::before {
     inset: 0;
     pointer-events: none;
     background:
-        linear-gradient(115deg, transparent 35%, rgba(255, 0, 0, .12) 50%, transparent 65%);
+        linear-gradient(
+            115deg,
+            transparent 35%,
+            rgba(255, 0, 0, .14) 50%,
+            transparent 65%
+        );
     animation: brilhoFundo 6s linear infinite;
     z-index: 0;
 }
@@ -43,21 +50,35 @@ body::after {
     inset: 0;
     pointer-events: none;
     background:
-        radial-gradient(circle at 20% 30%, rgba(255, 0, 0, .08), transparent 25%),
-        radial-gradient(circle at 80% 70%, rgba(255, 30, 30, .06), transparent 25%);
+        radial-gradient(circle at 20% 30%, rgba(255, 0, 0, .10), transparent 25%),
+        radial-gradient(circle at 80% 70%, rgba(255, 0, 0, .08), transparent 25%);
     animation: pulsarFundo 5s ease-in-out infinite alternate;
     z-index: 0;
 }
 
 @keyframes brilhoFundo {
-    0% { transform: translateX(-45%); }
-    100% { transform: translateX(45%); }
+    0% {
+        transform: translateX(-45%);
+    }
+
+    100% {
+        transform: translateX(45%);
+    }
 }
 
 @keyframes pulsarFundo {
-    from { opacity: .5; transform: scale(1); }
-    to { opacity: 1; transform: scale(1.08); }
+    from {
+        opacity: .5;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.08);
+    }
 }
+
+/* PARTÍCULAS */
 
 .particle {
     position: fixed;
@@ -65,7 +86,7 @@ body::after {
     width: 3px;
     height: 3px;
     border-radius: 50%;
-    background: #ff2020;
+    background: #ff0000;
     box-shadow:
         0 0 8px #ff0000,
         0 0 18px #ff0000,
@@ -78,7 +99,7 @@ body::after {
 .particle:nth-child(3n) {
     width: 2px;
     height: 2px;
-    background: #fff;
+    background: #ffffff;
 }
 
 .particle:nth-child(4n) {
@@ -94,16 +115,26 @@ body::after {
         transform: translateY(110vh) translateX(0) scale(.4);
         opacity: 0;
     }
-    15% { opacity: 1; }
+
+    15% {
+        opacity: 1;
+    }
+
     50% {
         transform: translateY(50vh) translateX(25px) scale(1);
     }
-    85% { opacity: 1; }
+
+    85% {
+        opacity: 1;
+    }
+
     100% {
         transform: translateY(-15vh) translateX(-25px) scale(.3);
         opacity: 0;
     }
 }
+
+/* CONTAINER */
 
 .container {
     position: relative;
@@ -113,10 +144,13 @@ body::after {
     min-height: 100vh;
     margin: 0 auto;
     padding: 35px 18px 30px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
+/* LOGO */
 
 .logo {
     width: 100%;
@@ -128,6 +162,7 @@ body::after {
     font-size: 42px;
     font-weight: 900;
     letter-spacing: -2px;
+
     text-shadow:
         0 0 10px rgba(255, 0, 0, .8),
         0 0 25px rgba(255, 0, 0, .5);
@@ -139,10 +174,12 @@ body::after {
 
 .logo p {
     margin-top: 6px;
-    color: #ccc;
+    color: #ffffff;
     font-size: 13px;
     letter-spacing: 5px;
 }
+
+/* ONLINE */
 
 .online {
     display: flex;
@@ -156,10 +193,13 @@ body::after {
     width: 12px;
     height: 12px;
     border-radius: 50%;
+
     background: #00ff66;
+
     box-shadow:
         0 0 10px #00ff66,
         0 0 22px rgba(0, 255, 100, .5);
+
     animation: onlinePulse 1.2s infinite;
 }
 
@@ -176,56 +216,98 @@ body::after {
     font-weight: 800;
 }
 
+/* CARD */
+
 .card {
     width: 100%;
     position: relative;
+
     padding: 40px 25px 32px;
+
     border-radius: 28px;
+
     background:
-        linear-gradient(145deg, rgba(35, 0, 0, .97), rgba(2, 2, 2, .99));
+        linear-gradient(
+            145deg,
+            rgba(35, 0, 0, .98),
+            rgba(2, 2, 2, .99)
+        );
+
     border: 2px solid #ff0000;
+
     box-shadow:
         0 0 15px rgba(255, 0, 0, .75),
         0 0 45px rgba(255, 0, 0, .25),
         inset 0 0 35px rgba(255, 0, 0, .08);
+
     backdrop-filter: blur(8px);
 }
+
+/* TÍTULO */
 
 .title {
     width: 100%;
     text-align: center;
+
     font-size: 34px;
     font-weight: 900;
+
     margin-bottom: 25px;
-    text-shadow: 0 0 15px rgba(255, 0, 0, .6);
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 15px rgba(255, 0, 0, .6);
 }
+
+/* BOTÃO GERAR */
 
 .generate {
     width: 100%;
     height: 65px;
+
     border: 2px solid #ff3333;
     border-radius: 17px;
+
     background:
-        linear-gradient(90deg, #800000, #ff0000, #800000);
+        linear-gradient(
+            90deg,
+            #700000,
+            #ff0000,
+            #700000
+        );
+
     background-size: 200% 100%;
-    color: #fff;
+
+    color: #ffffff;
+
     font-size: 17px;
     font-weight: 900;
+
     cursor: pointer;
+
     box-shadow:
         0 0 15px rgba(255, 0, 0, .8),
         inset 0 0 20px rgba(255, 255, 255, .08);
+
     transition: .2s;
+
     animation: botaoBrilho 3s linear infinite;
 }
 
 @keyframes botaoBrilho {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 200% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 200% 50%;
+    }
 }
 
 .generate:hover {
     transform: translateY(-2px);
+
     box-shadow:
         0 0 25px rgba(255, 0, 0, 1),
         0 0 45px rgba(255, 0, 0, .35);
@@ -235,8 +317,11 @@ body::after {
     transform: scale(.97);
 }
 
+/* REDES */
+
 #socials {
     width: 100%;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -244,49 +329,79 @@ body::after {
 
 .social-title {
     width: 100%;
+
     display: flex;
     align-items: center;
+
     gap: 10px;
-    color: #bbb;
+
+    color: #ffffff;
+
     font-size: 11px;
     letter-spacing: 2px;
+
     margin: 28px 0 15px;
+
     text-align: center;
 }
 
 .social-title::before,
 .social-title::after {
     content: "";
+
     height: 1px;
+
     flex: 1;
+
     background: #ff0000;
-    box-shadow: 0 0 8px #ff0000;
+
+    box-shadow:
+        0 0 8px #ff0000;
 }
+
+/* BOTÃO WHATSAPP */
 
 .social {
     width: 100%;
     height: 60px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     padding: 12px 16px;
     margin-bottom: 13px;
+
     border-radius: 15px;
+
     text-decoration: none;
-    color: #fff;
+
+    color: #ffffff;
+
     font-size: 13px;
     font-weight: 900;
+
     text-align: center;
     line-height: 1.2;
+
     transition: .2s;
+
+    /* GARANTE QUE APAREÇA */
+    opacity: 1;
+    visibility: visible;
 }
 
 .social svg {
-    width: 27px;
-    height: 27px;
-    fill: #fff;
+    width: 28px;
+    height: 28px;
+
+    fill: #ffffff;
+
     flex-shrink: 0;
+
     margin-right: 12px;
+
+    display: block;
 }
 
 .social:hover {
@@ -297,18 +412,36 @@ body::after {
     transform: scale(.97);
 }
 
+/* WHATSAPP VERMELHO */
+
 .whatsapp {
+    display: flex !important;
+
     background:
-        linear-gradient(90deg, #800000, #ff0000);
-    border: 2px solid #ff3333;
+        linear-gradient(
+            90deg,
+            #700000,
+            #ff0000
+        ) !important;
+
+    border: 2px solid #ff3333 !important;
+
     box-shadow:
-        0 0 18px rgba(255, 0, 0, .45);
+        0 0 18px rgba(255, 0, 0, .55),
+        inset 0 0 15px rgba(255, 255, 255, .08);
+
+    color: #ffffff !important;
 }
+
+/* RESULTADO */
 
 #result {
     width: 100%;
+
     display: none;
+
     text-align: center;
+
     animation: aparecer .4s ease;
 }
 
@@ -317,6 +450,7 @@ body::after {
         opacity: 0;
         transform: translateY(15px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -326,72 +460,113 @@ body::after {
 .success-icon {
     width: 65px;
     height: 65px;
+
     margin: 0 auto 15px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     border-radius: 50%;
+
     border: 2px solid #00ff66;
+
     color: #00ff66;
+
     font-size: 32px;
     font-weight: bold;
+
     box-shadow:
         0 0 20px rgba(0, 255, 100, .5);
 }
 
 .success h2 {
+    color: #ffffff;
+
     font-size: 20px;
+
     margin-bottom: 8px;
 }
 
 .success p {
-    color: #bbb;
+    color: #ffffff;
+
     font-size: 13px;
+
     margin-bottom: 25px;
 }
 
+/* KEY */
+
 .key-area {
     width: 100%;
+
     padding: 23px 15px;
+
     border-radius: 18px;
-    background: rgba(15, 0, 0, .85);
+
+    background: rgba(15, 0, 0, .90);
+
     border: 2px solid #cc0000;
+
     box-shadow:
         inset 0 0 25px rgba(255, 0, 0, .08),
         0 0 15px rgba(255, 0, 0, .2);
+
     margin-bottom: 17px;
 }
 
 .key-label {
     display: block;
-    color: #bbb;
+
+    color: #ffffff;
+
     font-size: 12px;
+
     letter-spacing: 1.5px;
+
     margin-bottom: 12px;
 }
 
 #generatedKey {
-    color: #fff;
+    color: #ffffff;
+
     font-size: 17px;
     font-weight: 900;
+
     word-break: break-word;
+
     text-shadow:
         0 0 10px rgba(255, 0, 0, .7);
 }
 
+/* COPIAR */
+
 .copy {
     width: 100%;
     height: 58px;
+
     border: 2px solid #ff3333;
+
     border-radius: 15px;
+
     background:
-        linear-gradient(90deg, #800000, #ff0000);
-    color: #fff;
+        linear-gradient(
+            90deg,
+            #700000,
+            #ff0000
+        );
+
+    color: #ffffff;
+
     font-size: 15px;
     font-weight: 900;
+
     cursor: pointer;
+
     box-shadow:
         0 0 18px rgba(255, 0, 0, .5);
+
     transition: .2s;
 }
 
@@ -403,50 +578,76 @@ body::after {
     transform: scale(.97);
 }
 
+/* FOOTER */
+
 footer {
     width: 100%;
+
     text-align: center;
+
     margin-top: 25px;
+
     padding-bottom: 10px;
 }
 
 footer p {
-    color: #777;
+    color: #ffffff;
+
     font-size: 11px;
+
     letter-spacing: 2px;
 }
 
 footer strong {
-    color: #fff;
+    color: #ff0000;
 }
+
+/* TOAST */
 
 .toast {
     position: fixed;
+
     left: 50%;
     bottom: 25px;
+
     transform: translate(-50%, 100px);
+
     padding: 13px 20px;
+
     background: #080000;
+
     border: 1px solid #ff0000;
+
     border-radius: 10px;
-    color: #fff;
+
+    color: #ffffff;
+
     font-size: 12px;
     font-weight: bold;
+
     opacity: 0;
+
     z-index: 100;
+
     transition: .3s;
-    box-shadow: 0 0 20px rgba(255, 0, 0, .5);
+
+    box-shadow:
+        0 0 20px rgba(255, 0, 0, .5);
+
     white-space: nowrap;
 }
 
 .toast.show {
     transform: translate(-50%, 0);
+
     opacity: 1;
 }
 </style>
 </head>
 
 <body>
+
+<!-- PARTÍCULAS -->
 
 <div class="particle" style="left:5%;animation-duration:8s;"></div>
 <div class="particle" style="left:15%;animation-duration:11s;animation-delay:2s;"></div>
@@ -460,17 +661,25 @@ footer strong {
 
 <div class="container">
 
+    <!-- LOGO -->
+
     <div class="logo">
         <h1>FZK <span>XITER</span></h1>
         <p>GERADOR DE KEY</p>
     </div>
+
+    <!-- ONLINE -->
 
     <div class="online">
         <div class="online-dot"></div>
         <span>ONLINE</span>
     </div>
 
+    <!-- CARD -->
+
     <div class="card">
+
+        <!-- GERADOR -->
 
         <div id="generator">
 
@@ -478,9 +687,15 @@ footer strong {
                 GERE SUA KEY
             </div>
 
-            <button type="button" id="generateButton" class="generate">
+            <button
+                type="button"
+                id="generateButton"
+                class="generate"
+            >
                 🔑 GERAR UMA KEY
             </button>
+
+            <!-- WHATSAPP -->
 
             <div id="socials">
 
@@ -495,24 +710,42 @@ footer strong {
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M12 2a10 10 0 0 0-8.66 15l-1.1 4.02a.75.75 0 0 0 .92.92l4.02-1.1A10 10 0 1 0 12 2Zm0 18.1a8.08 8.08 0 0 1-4.12-1.13l-.29-.17-2.39.65.65-2.39-.17-.29A8.1 8.1 0 1 1 12 20.1Zm4.45-6.07c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.93-1.18-.71-.63-1.18-1.41-1.32-1.65-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.11.16 1.53.1.47-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/>
+
+                    <!-- ÍCONE WHATSAPP -->
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                    >
+                        <path d="M12 2C6.49 2 2 6.49 2 12c0 1.77.46 3.44 1.34 4.94L2 22l5.22-1.32A9.94 9.94 0 0 0 12 22c5.51 0 10-4.49 10-10S17.51 2 12 2Zm0 18.2c-1.55 0-3.07-.42-4.4-1.22l-.31-.18-3.1.79.8-3.02-.2-.32A8.18 8.18 0 1 1 12 20.2Zm4.48-6.13c-.24-.12-1.41-.7-1.63-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1-.37-1.91-1.18-.7-.62-1.17-1.4-1.31-1.64-.14-.24-.01-.37.1-.48.1-.1.24-.27.36-.41.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.11.16 1.53.1.47-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/>
                     </svg>
+
                     GRUPO DO WHATSAPP
+
                 </a>
 
             </div>
+
         </div>
+
+        <!-- RESULTADO -->
 
         <div id="result">
 
             <div class="success">
 
-                <div class="success-icon">✓</div>
+                <div class="success-icon">
+                    ✓
+                </div>
 
-                <h2>KEY GERADA</h2>
+                <h2>
+                    KEY GERADA
+                </h2>
 
-                <p>SUA KEY FOI GERADA</p>
+                <p>
+                    SUA KEY FOI GERADA
+                </p>
 
             </div>
 
@@ -528,7 +761,11 @@ footer strong {
 
             </div>
 
-            <button type="button" id="copyButton" class="copy">
+            <button
+                type="button"
+                id="copyButton"
+                class="copy"
+            >
                 COPIAR KEY
             </button>
 
@@ -536,14 +773,20 @@ footer strong {
 
     </div>
 
+    <!-- FOOTER -->
+
     <footer>
+
         <p>
             CRIADO POR
             <strong>FZK XITER</strong>
         </p>
+
     </footer>
 
 </div>
+
+<!-- TOAST -->
 
 <div id="toast" class="toast">
     KEY COPIADA COM SUCESSO!
@@ -551,21 +794,39 @@ footer strong {
 
 <script>
 
-/* KEY */
+/* =========================
+   KEY
+========================= */
 
 const KEY = "FZKXITER04";
 
-/* ELEMENTOS */
 
-const generateButton = document.getElementById("generateButton");
-const copyButton = document.getElementById("copyButton");
-const generator = document.getElementById("generator");
-const result = document.getElementById("result");
-const socials = document.getElementById("socials");
-const generatedKey = document.getElementById("generatedKey");
-const toast = document.getElementById("toast");
+/* =========================
+   ELEMENTOS
+========================= */
 
-/* GERAR KEY */
+const generateButton =
+    document.getElementById("generateButton");
+
+const copyButton =
+    document.getElementById("copyButton");
+
+const generator =
+    document.getElementById("generator");
+
+const result =
+    document.getElementById("result");
+
+const generatedKey =
+    document.getElementById("generatedKey");
+
+const toast =
+    document.getElementById("toast");
+
+
+/* =========================
+   GERAR KEY
+========================= */
 
 generateButton.addEventListener("click", function () {
 
@@ -575,25 +836,31 @@ generateButton.addEventListener("click", function () {
 
     result.style.display = "block";
 
-    socials.style.display = "none";
-
     showToast("KEY GERADA COM SUCESSO!");
 
 });
 
-/* COPIAR KEY */
+
+/* =========================
+   COPIAR KEY
+========================= */
 
 copyButton.addEventListener("click", function () {
 
     const key = generatedKey.textContent;
 
-    if (navigator.clipboard && window.isSecureContext) {
+    if (
+        navigator.clipboard &&
+        window.isSecureContext
+    ) {
 
         navigator.clipboard.writeText(key)
 
             .then(function () {
 
-                showToast("KEY COPIADA COM SUCESSO!");
+                showToast(
+                    "KEY COPIADA COM SUCESSO!"
+                );
 
             })
 
@@ -611,33 +878,39 @@ copyButton.addEventListener("click", function () {
 
 });
 
-/* FALLBACK COPIAR */
+
+/* =========================
+   FALLBACK
+========================= */
 
 function fallbackCopy(text) {
 
-    const textarea = document.createElement("textarea");
+    const textarea =
+        document.createElement("textarea");
 
     textarea.value = text;
 
     textarea.style.position = "fixed";
-
     textarea.style.left = "-9999px";
 
     document.body.appendChild(textarea);
 
     textarea.focus();
-
     textarea.select();
 
     try {
 
         document.execCommand("copy");
 
-        showToast("KEY COPIADA COM SUCESSO!");
+        showToast(
+            "KEY COPIADA COM SUCESSO!"
+        );
 
     } catch (error) {
 
-        showToast("NÃO FOI POSSÍVEL COPIAR!");
+        showToast(
+            "NÃO FOI POSSÍVEL COPIAR!"
+        );
 
     }
 
@@ -645,7 +918,10 @@ function fallbackCopy(text) {
 
 }
 
-/* TOAST */
+
+/* =========================
+   TOAST
+========================= */
 
 function showToast(message) {
 
