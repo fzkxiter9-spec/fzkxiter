@@ -496,4 +496,172 @@ footer strong {
                     rel="noopener noreferrer"
                 >
                     <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M19.5 5.2A16.3 16.3 0 0 0 15.5 4l-.5 1a14.7 14.7 0 0 0-6 0l-.5-1a16.3 16.3 0 0 0-4 1.2C1.9 8.2 1.2 11.2 1.
+                        <path d="M19.5 5.2A16.3 16.3 0 0 0 15.5 4l-.5 1a14.7 14.7 0 0 0-6 0l-.5-1a16.3 16.3 0 0 0-4 1.2C1.9 8.2 1.2 11.2 1.5 14.1a16.2 16.2 0 0 0 5 2.5l1.1-1.5a10.3 10.3 0 0 1-1.7-.8l.4-.3c3.3 1.5 6.9 1.5 10.2 0l.4.3c-.5.3-1.1.6-1.7.8l1.1 1.5a16.2 16.2 0 0 0 5-2.5c.3-3-.4-6-1.8-8.9ZM8.7 13.2c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm6.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"/>
+                    </svg>
+                    SERVIDOR DO DISCORD
+                </a>
+
+            </div>
+        </div>
+
+        <div id="result">
+
+            <div class="success">
+
+                <div class="success-icon">✓</div>
+
+                <h2>KEY GERADA</h2>
+
+                <p>SUA KEY FOI GERADA</p>
+
+            </div>
+
+            <div class="key-area">
+
+                <span class="key-label">
+                    SUA KEY FOI GERADA:
+                </span>
+
+                <div id="generatedKey">
+                    FZKXITER04
+                </div>
+
+            </div>
+
+            <button type="button" id="copyButton" class="copy">
+                COPIAR KEY
+            </button>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <p>
+            CRIADO POR
+            <strong>FZK XITER</strong>
+        </p>
+    </footer>
+
+</div>
+
+<div id="toast" class="toast">
+    KEY COPIADA COM SUCESSO!
+</div>
+
+<script>
+
+/* KEY */
+
+const KEY = "FZKXITER04";
+
+/* ELEMENTOS */
+
+const generateButton = document.getElementById("generateButton");
+const copyButton = document.getElementById("copyButton");
+const generator = document.getElementById("generator");
+const result = document.getElementById("result");
+const socials = document.getElementById("socials");
+const generatedKey = document.getElementById("generatedKey");
+const toast = document.getElementById("toast");
+
+/* GERAR KEY */
+
+generateButton.addEventListener("click", function () {
+
+    generatedKey.textContent = KEY;
+
+    generator.style.display = "none";
+
+    result.style.display = "block";
+
+    socials.style.display = "none";
+
+    showToast("KEY GERADA COM SUCESSO!");
+
+});
+
+/* COPIAR KEY */
+
+copyButton.addEventListener("click", function () {
+
+    const key = generatedKey.textContent;
+
+    if (navigator.clipboard && window.isSecureContext) {
+
+        navigator.clipboard.writeText(key)
+
+            .then(function () {
+
+                showToast("KEY COPIADA COM SUCESSO!");
+
+            })
+
+            .catch(function () {
+
+                fallbackCopy(key);
+
+            });
+
+    } else {
+
+        fallbackCopy(key);
+
+    }
+
+});
+
+/* FALLBACK COPIAR */
+
+function fallbackCopy(text) {
+
+    const textarea = document.createElement("textarea");
+
+    textarea.value = text;
+
+    textarea.style.position = "fixed";
+
+    textarea.style.left = "-9999px";
+
+    document.body.appendChild(textarea);
+
+    textarea.focus();
+
+    textarea.select();
+
+    try {
+
+        document.execCommand("copy");
+
+        showToast("KEY COPIADA COM SUCESSO!");
+
+    } catch (error) {
+
+        showToast("NÃO FOI POSSÍVEL COPIAR!");
+
+    }
+
+    document.body.removeChild(textarea);
+
+}
+
+/* TOAST */
+
+function showToast(message) {
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+    setTimeout(function () {
+
+        toast.classList.remove("show");
+
+    }, 2200);
+
+}
+
+</script>
+
+</body>
+</html>
